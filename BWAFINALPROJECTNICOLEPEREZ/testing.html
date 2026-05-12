@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradesies</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="testing.css">
+</head>
+<body>
+<div class="phone">
+  <div class="notch"></div>
+
+  <!-- FEED -->
+  <div class="screen active" id="screen-feed">
+    <div class="header">
+      <button class="header-btn" onclick="openSidebar()">☰</button>
+      <div class="header-title">tradesies</div>
+      <button class="header-btn" onclick="openModal()">+</button>
+    </div>
+    <div class="search-wrap">
+      <input class="search-input" placeholder="Search offerings...">
+    </div>
+    <div class="scroll-body">
+      <div class="feed-card">
+        <div class="feed-card-header">
+          <div class="avatar" style="background:#5bc8e8">H</div>
+          <div>
+            <div class="feed-user-name">Hannah <span class="feed-star">★</span> <span style="font-size:13px;color:#000000;font-weight:700">4.9</span></div>
+            <div class="feed-meta">Bushwick, NY • 2h ago</div>
+          </div>
+        </div>
+        <img src="haircut.png" alt="Haircut" class="feed-img">
+        <div class="feed-body">
+          <div class="feed-title">Professional Haircut</div>
+          <div class="feed-desc">Licensed stylist, 5+ years experience with all hair types.</div>
+          <div class="feed-looking">Looking for: <b>Power drill or tools</b></div>
+        </div>
+      </div>
+      <div class="feed-card">
+        <div class="feed-card-header">
+          <div class="avatar" style="background:#d4a060">P</div>
+          <div>
+            <div class="feed-user-name">Pam <span class="feed-star">★</span> <span style="font-size:13px;color:#000000;font-weight:700">4.7</span></div>
+            <div class="feed-meta">Bushwick, NY • 5h ago</div>
+          </div>
+        </div>
+        <img src="bettyboop.jpg" alt="Poster" class="feed-img">
+        <div class="feed-body">
+          <div class="feed-title">Vintage Poster Collection</div>
+          <div class="feed-desc">Great pieces from the 60s and 70s — looking to trade for services.</div>
+          <div class="feed-looking">Looking for: <b>Haircut or styling</b></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-nav" id="nav-feed"></div>
+  </div>
+
+  <!-- BROWSE -->
+  <div class="screen" id="screen-browse">
+    <div class="header">
+      <button class="header-btn" onclick="openSidebar()">☰</button>
+      <div class="header-title">tradesies</div>
+      <button class="header-btn" onclick="openModal()">+</button>
+    </div>
+    <div class="search-wrap"><input class="search-input" placeholder="Search listings..."></div>
+    <div class="chips-wrap">
+      <div class="chip active">All</div>
+      <div class="chip">Services</div>
+      <div class="chip">Items</div>
+      <div class="chip">Food</div>
+      <div class="chip">Lessons</div>
+    </div>
+    <div class="scroll-body">
+      <div class="browse-card">
+        <div class="browse-card-top">
+          <div class="avatar" style="background:#5bc8e8;width:48px;height:48px;font-size:19px">H</div>
+          <div class="browse-info">
+            <div class="browse-name">Hannah <span style="color:#273C2C;font-size:13px">★ 4.9</span></div>
+            <div class="browse-loc">Bushwick, NY</div>
+            <div class="browse-quote">"Would love to trade a haircut for some tools!"</div>
+          </div>
+          <button class="heart-btn liked" onclick="toggleHeart(this)">♥</button>
+        </div>
+        <div class="browse-tags">
+          <div class="tag">Looking for <b>Drill</b></div>
+          <div class="tag">Offering <span class="purple">Haircut</span></div>
+        </div>
+      </div>
+      <div class="browse-card">
+        <div class="browse-card-top">
+          <div class="avatar" style="background:#d4a060;width:48px;height:48px;font-size:19px">P</div>
+          <div class="browse-info">
+            <div class="browse-name">Pam <span style="color:#273C2C;font-size:13px">★ 4.7</span></div>
+            <div class="browse-loc">Bushwick, NY</div>
+            <div class="browse-quote">"Looking to decorate my salon with vintage posters!"</div>
+          </div>
+          <button class="heart-btn" onclick="toggleHeart(this)">♡</button>
+        </div>
+        <div class="browse-tags">
+          <div class="tag">Looking for <b>Betty Boop Poster</b></div>
+          <div class="tag">Offering <span class="purple">Haircut</span></div>
+        </div>
+      </div>
+      <div class="browse-card">
+        <div class="browse-card-top">
+          <div class="avatar" style="background:#8a9aaa;width:48px;height:48px;font-size:19px">A</div>
+          <div class="browse-info">
+            <div class="browse-name">Andy <span style="color:#273C2C;font-size:13px">★ 5.0</span></div>
+            <div class="browse-loc">East Village, NY</div>
+            <div class="browse-quote">"AC broke — happy to trade a tattoo for cooling!"</div>
+          </div>
+          <button class="heart-btn liked" onclick="toggleHeart(this)">♥</button>
+        </div>
+        <div class="browse-tags">
+          <div class="tag">Looking for <b>AC</b></div>
+          <div class="tag">Offering <span class="purple">Tattoo</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-nav" id="nav-browse"></div>
+  </div>
+
+  <!-- SAVED -->
+  <div class="screen" id="screen-saved">
+    <div class="header">
+      <button class="header-btn" onclick="openSidebar()">☰</button>
+      <div class="header-title">tradesies</div>
+      <button class="header-btn" onclick="openModal()">+</button>
+    </div>
+    <div class="search-wrap"><input class="search-input" placeholder="Search favorites..."></div>
+    <div class="scroll-body">
+      <div class="browse-card">
+        <div class="browse-card-top">
+          <div class="avatar" style="background:#5bc8e8;width:48px;height:48px;font-size:19px">H</div>
+          <div class="browse-info">
+            <div class="browse-name">Hannah <span style="color:#273C2C;font-size:13px">★ 4.9</span></div>
+            <div class="browse-loc">Bushwick, NY</div>
+            <div class="browse-quote">"Would love to trade my haircuts for some tools!"</div>
+          </div>
+          <button class="heart-btn liked" onclick="toggleHeart(this)">♥</button>
+        </div>
+        <div class="browse-tags">
+          <div class="tag">Looking for <b>Drill</b></div>
+          <div class="tag">Offering <span class="purple">Haircut</span></div>
+        </div>
+      </div>
+      <div class="browse-card">
+        <div class="browse-card-top">
+          <div class="avatar" style="background:#8a9aaa;width:48px;height:48px;font-size:19px">A</div>
+          <div class="browse-info">
+            <div class="browse-name">Andy <span style="color:#273C2C;font-size:13px">★ 5.0</span></div>
+            <div class="browse-loc">East Village, NY</div>
+            <div class="browse-quote">"AC broke — happy to trade fresh cuts for cooling!"</div>
+          </div>
+          <button class="heart-btn liked" onclick="toggleHeart(this)">♥</button>
+        </div>
+        <div class="browse-tags">
+          <div class="tag">Looking for <b>AC</b></div>
+          <div class="tag">Offering <span class="purple">Haircut</span></div>
+        </div>
+      </div>
+      <div class="browse-card">
+        <div class="browse-card-top">
+          <div class="avatar" style="background:#c07a30;width:48px;height:48px;font-size:19px">D</div>
+          <div class="browse-info">
+            <div class="browse-name">Danny <span style="color:#273C2C;font-size:13px">★ 4.6</span></div>
+            <div class="browse-loc">Ridgewood, NY</div>
+            <div class="browse-quote">"Great guitar lessons — trade me a home-cooked meal!"</div>
+          </div>
+          <button class="heart-btn liked" onclick="toggleHeart(this)">♥</button>
+        </div>
+        <div class="browse-tags">
+          <div class="tag">Looking for <b>Warm meal</b></div>
+          <div class="tag">Offering <span class="purple">Guitar Lessons</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-nav" id="nav-saved"></div>
+  </div>
+
+  <!-- INBOX -->
+  <div class="screen" id="screen-inbox">
+    <div class="header">
+      <button class="header-btn" onclick="openSidebar()">☰</button>
+      <div class="header-title">tradesies</div>
+      <button class="header-btn" onclick="openModal()">+</button>
+    </div>
+    <div class="inbox-header">
+      <div class="inbox-title">Messages</div>
+      <div class="inbox-sub">2 unread</div>
+    </div>
+    <div class="scroll-body">
+      <div class="msg-card">
+        <div class="msg-avatar-wrap">
+          <div class="avatar" style="background:#5bc8e8">H</div>
+          <div class="msg-dot"></div>
+        </div>
+        <div class="msg-content">
+          <div class="msg-top"><span class="msg-name">Hannah</span><span class="msg-time">10m ago</span></div>
+          <div class="msg-subject">Re: Drill trade</div>
+          <div class="msg-preview">Hey! I have a drill you can borrow. When works for you?</div>
+        </div>
+      </div>
+      <div class="msg-card">
+        <div class="msg-avatar-wrap">
+          <div class="avatar" style="background:#8a9aaa">M</div>
+        </div>
+        <div class="msg-content">
+          <div class="msg-top"><span class="msg-name">Marcus</span><span class="msg-time">2h ago</span></div>
+          <div class="msg-subject">Re: Guitar lessons</div>
+          <div class="msg-preview">Thanks for the guitar lesson!</div>
+        </div>
+      </div>
+      <div class="msg-card">
+        <div class="msg-avatar-wrap">
+          <div class="avatar" style="background:#f0b8b8">A</div>
+          <div class="msg-dot"></div>
+        </div>
+        <div class="msg-content">
+          <div class="msg-top"><span class="msg-name">April</span><span class="msg-time">5h ago</span></div>
+          <div class="msg-subject">Re: Moving help</div>
+          <div class="msg-preview">Would you be available this Saturday for the move?</div>
+        </div>
+      </div>
+      <div class="msg-card">
+        <div class="msg-avatar-wrap">
+          <div class="avatar" style="background:#b03040">S</div>
+        </div>
+        <div class="msg-content">
+          <div class="msg-top"><span class="msg-name">Sarah</span><span class="msg-time">1d ago</span></div>
+          <div class="msg-subject">Re: Home-cooked meal</div>
+          <div class="msg-preview">The pasta was amazing! Let me know about dog walking.</div>
+        </div>
+      </div>
+      <div class="msg-card">
+        <div class="msg-avatar-wrap">
+          <div class="avatar" style="background:#d4a060">P</div>
+        </div>
+        <div class="msg-content">
+          <div class="msg-top"><span class="msg-name">Pam</span><span class="msg-time">2d ago</span></div>
+          <div class="msg-subject">Re: Poster trade</div>
+          <div class="msg-preview">I still have the Betty Boop poster if you're interested!</div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-nav" id="nav-inbox"></div>
+  </div>
+
+  <!-- PROFILE -->
+  <div class="screen" id="screen-profile">
+    <div class="header" style="justify-content:center;position:relative">
+      <div class="header-title">tradesies</div>
+      <button class="header-btn" style="position:absolute;right:10px" onclick="openModal()">+</button>
+    </div>
+    <div class="scroll-body" style="padding:0;background:#939196">
+      <div class="profile-top">
+        <div class="avatar" style="background:#273C2C;width:72px;height:72px;font-size:28px;margin:0 auto">NP</div>
+        <div class="profile-name">Nicole P</div>
+        <div class="profile-rating">★ 4.8 · 6 reviews</div>
+        <div class="profile-loc">New York, NY · Member since Jan 2026</div>
+      </div>
+      <div class="stats-card">
+        <div class="stat-item"><div class="stat-num">8</div><div class="stat-lbl">Trades</div></div>
+        <div class="stat-item"><div class="stat-num">0</div><div class="stat-lbl">Listings</div></div>
+        <div class="stat-item"><div class="stat-num">3</div><div class="stat-lbl">Saved</div></div>
+      </div>
+      <div class="profile-tiles">
+        <div class="profile-tile" onclick="showScreen('saved')">
+          <div class="tile-icon" style="color:#c0392b">♥</div>
+          <div class="tile-label">Saved</div>
+          <div class="tile-sub">3 items</div>
+        </div>
+        <div class="profile-tile" onclick="showScreen('inbox')">
+          <span class="tile-badge">2</span>
+          <div class="tile-icon">✉</div>
+          <div class="tile-label">Messages</div>
+          <div class="tile-sub">2 unread</div>
+        </div>
+      </div>
+      <div class="listings-header">
+        <div class="listings-title">My Listings</div>
+        <div class="browse-all" onclick="showScreen('browse')">Browse all →</div>
+      </div>
+      <div class="empty-listings">No listings yet</div>
+    </div>
+    <div class="bottom-nav" id="nav-profile"></div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-top">
+      <div class="avatar" style="background:#273C2C;width:56px;height:56px;font-size:22px;margin:0 auto">NP</div>
+      <div class="sidebar-name">Nicole P</div>
+      <div class="sidebar-rating">★ 4.8 · New York, NY</div>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="sidebar-item" onclick="showScreen('feed');closeSidebar()">
+        <span class="sidebar-icon">⊞</span> Feed
+      </button>
+      <button class="sidebar-item" onclick="showScreen('browse');closeSidebar()">
+        <span class="sidebar-icon">⌕</span> Browse
+      </button>
+      <button class="sidebar-item" onclick="showScreen('saved');closeSidebar()">
+        <span class="sidebar-icon">♥</span> Saved
+      </button>
+      <button class="sidebar-item" onclick="showScreen('inbox');closeSidebar()">
+        <span class="sidebar-icon">✉</span> Inbox
+        <span class="sidebar-badge">2</span>
+      </button>
+      <button class="sidebar-item" onclick="showScreen('profile');closeSidebar()">
+        <span class="sidebar-icon">◎</span> Profile
+      </button>
+    </nav>
+    <div class="sidebar-divider"></div>
+    <nav class="sidebar-nav">
+      <button class="sidebar-item sidebar-item--muted">
+        <span class="sidebar-icon">⚙</span> Settings
+      </button>
+      <button class="sidebar-item sidebar-item--muted">
+        <span class="sidebar-icon">?</span> Help & FAQ
+      </button>
+      <button class="sidebar-item sidebar-item--muted" style="color:#c0392b">
+        <span class="sidebar-icon">↩</span> Log out
+      </button>
+    </nav>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+  <div class="modal-sheet" id="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-header">
+      <div class="modal-title">Post a Listing</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-scroll">
+      <label class="form-label">What are you offering?</label>
+      <input class="form-input" placeholder="e.g. Haircut, Guitar lessons, Vintage lamp…">
+
+      <label class="form-label">Category</label>
+      <div class="category-chips">
+        <div class="cat-chip active" onclick="selectCat(this)">Service</div>
+        <div class="cat-chip" onclick="selectCat(this)">Item</div>
+        <div class="cat-chip" onclick="selectCat(this)">Food</div>
+        <div class="cat-chip" onclick="selectCat(this)">Lesson</div>
+        <div class="cat-chip" onclick="selectCat(this)">Other</div>
+      </div>
+
+      <label class="form-label">Description</label>
+      <textarea class="form-textarea" placeholder="Tell people a bit more — experience, condition, availability…"></textarea>
+
+      <label class="form-label">What are you looking for in return?</label>
+      <input class="form-input" placeholder="e.g. Power drill, Home-cooked meal, Dog walking…">
+
+      <label class="form-label">Your location</label>
+      <input class="form-input" placeholder="Neighborhood or city">
+
+      <label class="form-label">Add a photo <span style="font-weight:400;color:#9a8c7a">(optional)</span></label>
+      <div class="photo-upload" onclick="document.getElementById('photo-input').click()">
+        <div class="photo-icon">📷</div>
+        <div class="photo-label">Tap to upload</div>
+        <input id="photo-input" type="file" accept="image/*" style="display:none">
+      </div>
+
+      <button class="btn-post" onclick="submitListing()">Post Listing ✦</button>
+    </div>
+  </div>
+
+</div><!-- end .phone -->
+
+<script src="testing.js" defer></script>
+</body>
+</html>
